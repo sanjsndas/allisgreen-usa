@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Allisgreen Gardening</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f4eee8;
+    color: #4b3621;
+    line-height: 1.6;
+  }
+
+  header {
+    background: #5a3e1b;
+    color: #f7f1e9;
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+
+  header p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #d8c8b5;
+  }
+    
+  nav {
+    background: #a45a00;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  nav a {
+    color: #fff8f0;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #d9822b;
+    outline: none;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .intro {
+    margin-bottom: 50px;
+  }
+
+  .intro h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #a45a00;
+    border-bottom: 3px solid #d9822b;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .intro p {
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 35px;
+    margin-bottom: 50px;
+  }
+
+  .service-card {
+    background: #fff8f0;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(173, 101, 42, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(155, 84, 20, 0.3);
+  }
+
+  .service-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 5px solid #d9822b;
+  }
+
+  .service-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .service-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #a45a00;
+  }
+
+  .service-desc {
+    font-weight: 300;
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .service-price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #cd6a1f;
+    border-top: 1px solid #d98437;
+    padding-top: 12px;
+  }
+
+  .extra-content {
+    background: #fff8f0;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 6px 20px rgba(173, 101, 42, 0.15);
+    color: #4b3621;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 70px;
+  }
+
+  .extra-content h2 {
+    color: #a45a00;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #d9822b;
+    padding-bottom: 7px;
+    display: inline-block;
+  }
+
+  .extra-content p {
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  .extra-content h3 {
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #a45a00;
+  }
+
+  .customer-satisfaction {
+    background: #fefaf5;
+    border-radius: 12px;
+    padding: 35px 30px;
+    box-shadow: 0 6px 20px rgba(222, 189, 141, 0.3);
+    color: #4b3621;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+
+  .customer-satisfaction h2 {
+    color: #a45a00;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #d9822b;
+    padding-bottom: 7px;
+    display: inline-block;
+  }
+
+  .testimonials {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .testimonial {
+    margin-bottom: 25px;
+    font-style: italic;
+  }
+
+  .testimonial p {
+    margin-bottom: 6px;
+  }
+
+  .testimonial .customer-name {
+    font-weight: 600;
+    font-style: normal;
+    color: #a45a00;
+  }
+
+  footer {
+    background: #4a2f0f;
+    color: #f0e6d9;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  footer p {
+    margin: 8px 0;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    .intro h2, .extra-content h2, .customer-satisfaction h2 {
+      font-size: 1.6rem;
+    }
+    .service-img {
+      height: 140px;
+ }
+    nav {
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    
+    }
+    nav a {
+      margin: 6px 10px;
+      
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Allisgreen Gardening</h1>
+  <p>Your Trusted Partner for a Greener, Healthier Garden</p>
+  
+  <nav aria-label="Primary navigation">
+  <a href="index.html" aria-current="page">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms & Conditions</a>
+  <a href="cookies.html">Cookies Policy</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<main>
+  <section class="intro" aria-label="About Allisgreen Gardening">
+    <h2>Welcome to Allisgreen Gardening</h2>
+    <p>
+      At Allisgreen Gardening, we believe that a beautiful garden is the cornerstone of a happy and healthy home. Nestled in the heart of nature, your garden is a sanctuary where you can relax, grow, and connect with the outdoors. Our mission is to transform your outdoor space into a lush, vibrant paradise tailored to your desires and climate. 
+    </p>
+    <p>
+      With over 15 years of experience in the gardening industry, our expert team specializes in a wide spectrum of services designed to nurture every aspect of your garden — from lawn care and planting to intricate garden design and tree pruning. We understand that every garden is unique and therefore requires a personalized approach. Whether you have a sprawling backyard or a cozy balcony garden, we cater to all scales of gardening projects with dedication and passion.
+    </p>
+    <p>
+      Sustainable gardening is at the core of our philosophy. We use eco-friendly products and techniques to promote soil health, water conservation, and biodiversity. Our experts stay updated with the latest horticultural research and best practices to ensure your garden thrives season after season. We’re committed to helping you create not only a breathtaking garden but also a healthy ecosystem that supports local wildlife and benefits the planet.
+    </p>
+    <p>
+      Beyond just maintenance, we believe that gardening is an art form. Our design specialists are skilled in creating visually stunning layouts that incorporate color theory, plant selection, seasonal interest, and hardscaping elements to enhance the beauty and functionality of your outdoor space. Whether you dream of a serene Japanese Zen garden, a colorful flowerbed, or an edible landscape bursting with fresh fruits and vegetables, we have the expertise to bring your vision to life.
+    </p>
+    <p>
+      Customer satisfaction is our top priority. We work closely with you from consultation to project completion and maintenance, ensuring transparency, reliability, and exceptional service every step of the way. Our team is fully insured and certified, giving you peace of mind that your garden is in safe hands.
+    </p>
+    <p>
+      Join the countless homeowners who have entrusted Allisgreen Gardening to beautify their gardens and enhance their quality of life. Explore our range of tailor-made gardening services below and contact us to schedule your free consultation today. Let’s cultivate your dream garden together.
+    </p>
+  </section>
+
+  <section class="services" aria-label="Gardening Services">
+    <article class="service-card">
+      <img src="https://plus.unsplash.com/premium_photo-1679765934200-d1cb3153c631?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lawn Care Service" class="service-img" />
+      <div class="service-content">
+        <h3 class="service-title">Lawn Care & Maintenance</h3>
+        <p class="service-desc">
+          Maintain a lush, green lawn with our comprehensive lawn care services. We provide mowing, fertilizing, aerating, weed control, and seasonal cleanups tailored to your grass type and climate. Keep your lawn healthy and vibrant all year round.
+        </p>
+        <p class="service-price">Prices starting at $45/month</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="garden2.png" alt="Garden Design Service" class="service-img" />
+      <div class="service-content">
+        <h3 class="service-title">Garden Design & Installation</h3>
+        <p class="service-desc">
+          Bring your garden vision to life with our professional garden design services. From initial concept to plant selection and installation, we create custom layouts that blend beauty with functionality, suited to your taste and environment.
+        </p>
+        <p class="service-price">Prices starting at $1200/project</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tree Pruning Service" class="service-img" />
+      <div class="service-content">
+        <h3 class="service-title">Tree Pruning & Health Care</h3>
+        <p class="service-desc">
+          Protect and enhance your trees with our expert pruning and health care services. We focus on safety trimming, shaping, disease prevention, and removal of deadwood to ensure your trees grow strong and beautiful.
+        </p>
+        <p class="service-price">Prices starting at $150/tree</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="seasonal.png" alt="Seasonal Cleanups" class="service-img" />
+      <div class="service-content">
+        <h3 class="service-title">Seasonal Garden Cleanups</h3>
+        <p class="service-desc">
+          Keep your garden tidy and ready for any season. Our seasonal cleanups include leaf removal, debris clearing, bed preparation, mulching, and general maintenance to keep your garden healthy and beautiful year-round.
+        </p>
+        <p class="service-price">Prices starting at $100/session</p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <img src="irrigation.png" alt="Irrigation Systems" class="service-img" />
+      <div class="service-content">
+        <h3 class="service-title">Irrigation System Installation</h3>
+        <p class="service-desc">
+          Ensure your garden is watered efficiently with custom irrigation systems. We design, install, and maintain drip and sprinkler systems to save water and promote healthy plant growth.
+        </p>
+        <p class="service-price">Prices starting at $800/system</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="extra-content" aria-label="Gardening Tips and FAQs">
+    <h2>Gardening Tips, Benefits, and Frequently Asked Questions</h2>
+    <p>
+      Gardening is not just about planting flowers and trimming hedges; it's a rewarding lifestyle that boosts mental well-being, physical health, and environmental sustainability. Here at Allisgreen Gardening, we want to share some valuable tips and insights to help you make the most of your garden, whether you are a beginner or an experienced green thumb.
+    </p>
+    <p>
+      <strong>Tip 1: Choose the Right Plants for Your Climate</strong><br/>
+      One of the biggest factors in gardening success is selecting plants suited to your local climate, soil type, and sunlight conditions. Native plants often require less water and maintenance as they are well-adapted to your region. Our garden design team can help suggest the most resilient and beautiful plants for your garden space.
+    </p>
+    <p>
+      <strong>Tip 2: Embrace Composting</strong><br/>
+      Composting your kitchen waste and garden trimmings creates nutrient-rich soil naturally and reduces landfill waste. Compost improves soil fertility and structure, leading to healthier plants and better water retention. We can offer composting solutions tailored for your home or community garden.
+    </p>
+    <p>
+      <strong>Tip 3: Water Wisely and Efficiently</strong><br/>
+      Overwatering is a common mistake. Early morning watering reduces evaporation and fungal diseases. Installing drip irrigation systems ensures plants get water where they need it most, conserving water and time. We provide customized irrigation installations that fit your garden’s specific needs.
+    </p>
+    <p>
+      Beyond these tips, professional gardening services provide extensive benefits:
+    </p>
+    <ul>
+      <li><strong>Expert Knowledge:</strong> Trained professionals understand plant care, soil science, pest management, and garden design principles.</li>
+      <li><strong>Time Savings:</strong> Regular maintenance and seasonal care by experts frees up your time without compromising garden health.</li>
+      <li><strong>Property Value:</strong> A well-kept garden enhances curb appeal and increases property resale value.</li>
+      <li><strong>Environmental Responsibility:</strong> Professionals use sustainable practices that minimize harmful chemicals and promote biodiversity.</li>
+    </ul>
+    <h3>Frequently Asked Questions (FAQs)</h3>
+    <p><strong>Q: How often should I water my lawn during summer?</strong><br/>
+      A: Typically, lawns need about 1 to 1.5 inches of water per week, either from rain or irrigation. Water early mornings 2-3 times per week rather than daily for best results.</p>
+    <p><strong>Q: When is the best time to prune trees?</strong><br/>
+      A: Late winter or early spring is ideal for most trees to promote healthy growth and minimize disease risk. However, fruit trees may require pruning after harvest.</p>
+    <p><strong>Q: Can you design low-maintenance gardens?</strong><br/>
+      A: Absolutely! We specialize in creating beautiful gardens that require minimal upkeep using native plants, mulching, and efficient irrigation.</p>
+    <p><strong>Q: Do you offer organic gardening services?</strong><br/>
+      A: Yes, our team practices organic gardening techniques using natural fertilizers and pest control methods that are safe for your family and pets.</p>
+    <p>
+      We invite you to contact us for a personalized consultation to discover how Allisgreen Gardening can help you achieve your dream garden.
+    </p>
+  </section>
+
+  <section class="customer-satisfaction" aria-label="Customer Satisfaction and Testimonials">
+    <h2>Customer Satisfaction</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"GreenScape transformed our backyard into a tranquil paradise! Their team was professional, punctual, and truly passionate about their work."</p>
+        <p class="customer-name">– Sarah J., Gardentown</p>
+      </div>
+      <div class="testimonial">
+        <p>"Excellent service and attention to detail. Our lawn has never looked better, and we appreciate their eco-friendly approach."</p>
+        <p class="customer-name">– Michael K., Thomas</p>
+      </div>
+      <div class="testimonial">
+        <p>"From design to maintenance, GreenScape's experts made gardening enjoyable and stress-free. Highly recommend their services!"</p>
+        <p class="customer-name">– Lisa M.,Mirror</p>
+      </div>
+    </div>
+    <p>
+      We take immense pride in our 98% customer satisfaction rate. Your happiness and trust motivate us to provide outstanding service and exceptional gardens every time.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p>Allisgreen Gardening</p>
+  <p>55 East 10th Street, New York, NY 10003, United States</p>
+  <p>Phone: (800) 224-4555</p>
+</footer>
+</body>
+</html>
